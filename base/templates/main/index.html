@@ -1,0 +1,108 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECARS.UZ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Raleway';
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .section {
+            padding: 50px 20px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+
+        .section:hover {
+            transform: scale(1.05);
+            color: #007bff;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .btn-custom {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn-custom:hover {
+            background-color: #0056b3;
+            color: #fff;
+        }
+
+        .highlight {
+            background-color: #eef6ff;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 40px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .highlight:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <h2 class="text-primary">Welcome to ECARS.UZ</h2>
+        <p>Your premier destination for top-quality electric cars in Uzbekistan. Discover innovation, sustainability, and luxury in one place.</p>
+    </div>
+
+    <div class="section highlight">
+        <h2>About ECARS.UZ</h2>
+        <p>At ECARS.UZ, we pride ourselves on offering a wide range of premium electric vehicles that combine cutting-edge technology with affordable pricing.</p>
+    </div>
+
+    <div class="section highlight">
+        <h2>Eco-Friendly</h2>
+        <p>Drive with confidence knowing you’re contributing to a greener future.</p>
+    </div>
+
+    <div class="section highlight">
+        <h2>High Performance</h2>
+        <p>Experience the thrill of superior acceleration and top-notch engineering.</p>
+    </div>
+
+    <div class="section highlight">
+        <h2>Affordable Luxury</h2>
+        <p>Enjoy the perfect balance of luxury and affordability.</p>
+    </div>
+
+    <div class="section">
+        <h2>Ready to Join the Electric Revolution?</h2>
+        <p>Browse our collection today and take the first step towards a sustainable future.</p>
+        <a href="{% url 'cars_home' %}" class="btn btn-primary btn-lg mt-4">Find Your Car</a>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+{% endblock %}

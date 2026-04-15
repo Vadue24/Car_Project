@@ -1,0 +1,39 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+<div class="container" style="margin-top: 200px; margin-bottom: 200px">
+  <div class="row justify-content-between">
+    <div class="card col-md-3 p-2 mb-4">
+      <img src="{% static 'main/img/person1.jpg' %}" class="card-img-top" alt="John Doe" style="height: 450px; object-fit: cover;">
+      <div class="card-body">
+        <h5 class="card-title">John Doe</h5>
+        <p class="card-text">CEO and Founder of ECars UZ, leading the import of Chinese electric cars to Uzbekistan.</p>
+        <a href="#" class="btn btn-primary">Contact</a>
+      </div>
+    </div>
+
+    <div class="card col-md-3 p-2 mb-4">
+      <img src="{% static 'main/img/person2.jpg' %}" class="card-img-top" alt="Jane Smith" style="height: 450px; object-fit: cover;">
+      <div class="card-body">
+        <h5 class="card-title">Jane Smith</h5>
+        <p class="card-text">Sales Director at ECars UZ, overseeing the distribution of Chinese electric vehicles in Uzbekistan.</p>
+        <a href="#" class="btn btn-primary">Contact</a>
+      </div>
+    </div>
+
+    <div class="card col-md-3 p-2 mb-4">
+      <img src="{% static 'main/img/person3.jpg' %}" class="card-img-top" alt="Mike Johnson" style="height: 450px; object-fit: cover;">
+      <div class="card-body">
+        <h5 class="card-title">Mike Johnson</h5>
+        <p class="card-text">Marketing Manager at ECars UZ, promoting Chinese electric vehicles in Uzbekistan and building brand awareness.</p>
+        <a href="#" class="btn btn-primary">Contact</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

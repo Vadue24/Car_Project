@@ -1,0 +1,63 @@
+{% extends 'main/layout.html' %}
+
+{% load static %}
+
+{% block title %}Cars{% endblock %}
+
+{% block content %}
+
+<div class="container min-h-screen mt-5 mb-5 d-flex justify-content-center">
+    <div class="calculator-box mb-5 p-5 rounded bg-light border">
+        <h1 class="text-center mb-5" style="font-size: 2rem;">Electric Car Cost Calculator</h1>
+
+        <div class="info-box p-4 mb-4 rounded bg-white border">
+            <h2 class="text-success" style="font-size: 1.7rem;">Fee Information:</h2>
+            <ul class="list-unstyled text-secondary" style="font-size: 1.5rem;">
+                <li>VAT (12% of car price)</li>
+                <li>Recycling fee: 795.20$</li>
+                <li>Customs fee: 66.27$</li>
+                <li>Certificate of conformity: 300$</li>
+            </ul>
+        </div>
+
+        <div class="form-group mb-4">
+            <label for="car-price" class="form-label" style="font-size: 1.2rem;">Enter the price of the electric car ($):</label>
+            <input type="number" id="car-price" class="form-control" placeholder="For example, 43000" style="font-size: 1.2rem; padding: 0.8rem;">
+        </div>
+        <button class="btn btn-primary btn-lg w-100 mt-3" style="font-size: 1.2rem; padding: 0.8rem;" onclick="calculate()">Calculate</button>
+
+        <div id="result" class="result mt-4 p-3 text-white rounded d-none" style="font-size: 1.2rem; background-color: #0056b3;"></div>
+    </div>
+</div>
+
+
+<script>
+    function calculate() {
+        const carPrice = parseFloat(document.getElementById('car-price').value);
+        if (isNaN(carPrice) || carPrice <= 0) {
+            alert('Please enter a valid price!');
+            return;
+        }
+
+        const vat = carPrice * 0.12;
+        const recyclingFee = 10200000 / 12827;
+        const customsFee = 850000 / 12827;
+        const certificateFee = 300;
+
+        const totalUSD = carPrice + vat + recyclingFee + customsFee + certificateFee;
+        const resultElement = document.getElementById('result');
+        resultElement.innerHTML = `
+            <p>Electric car price: ${carPrice.toFixed(2)}$</p>
+            <p>VAT (12%): ${vat.toFixed(2)}$</p>
+            <p>Recycling fee: ${recyclingFee.toFixed(2)}$</p>
+            <p>Customs fee: ${customsFee.toFixed(2)}$</p>
+            <p>Certificate of conformity: ${certificateFee}$</p>
+            <p><strong>Total cost: ${totalUSD.toFixed(2)}$</strong></p>
+        `;
+        resultElement.classList.remove('d-none');
+    }
+</script>
+
+
+
+{% endblock %}
