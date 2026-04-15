@@ -1,0 +1,32 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<div class="container mb-5 mt-5">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb fs-4">
+            <li class="breadcrumb-item"><a href="{% url 'cars_home' %}">Cars</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ post.title }}</li>
+        </ol>
+    </nav>
+    <div class="row align-items-center mt-5">
+        <div class="col-md-6 text-center">
+            <img src="{{ post.picture.url }}" alt="PICTURE" class="img-fluid" style="max-width: 100%; border-radius: 10px;">
+        </div>
+        <div class="col-md-6 mb-5">
+            <h1 class="news-title display-3">{{ post.title }}</h1>
+            <p class="news-date fs-4">{{ post.date }}</p>
+            <p class="news-price text-success" style="font-size: 1.8rem; font-weight: bold;">
+                {{ post.price|floatformat:0 }}$
+            </p>
+            <p class="news-text lead fs-4"><b>{{ post.full_text }}</b></p>
+            <div class="mt-4 mb-4">
+                <a href="{% url 'cars_delete' post.id %}" class="btn btn-danger btn-lg mx-2">Delete</a>
+                <a href="{% url 'news_update' post.id %}" class="btn btn-primary btn-lg mx-2">Change</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

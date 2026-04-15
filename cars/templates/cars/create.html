@@ -1,0 +1,48 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Form for adding a car{% endblock %}
+
+{% block content %}
+<div class="container-sm mb-4 bg-dark p-4 mx-auto" style="max-width: 600px; border-radius: 15px; margin-top: 100px;">
+    <h1 class="text-white">Form for adding a car</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row justify-content-center">
+            <div class="col">
+                <div class="mb-3 mt-3">
+                    <label class="form-label text-light">Car name</label>
+                    {{ form.title }}
+                </div>
+                <div class="mb-3">
+                    <label class="form-label text-light">Details</label>
+                    {{ form.anons }}
+                </div>
+                <div class="mb-3">
+                    <label class="form-label text-light">Price in USD</label>
+                    {{ form.price }}
+                </div>
+                <div class="mb-3">
+                    <label class="form-label text-light">Text</label>
+                    {{ form.full_text }}
+                </div>
+                <div class="mb-3">
+                    <label class="form-label text-light">Date</label>
+                    {{ form.date }}
+                </div>
+                <div>
+                    <label class="form-label text-white">Picture</label>>
+                    {{ form.picture }}
+                </div>
+                <span>{{ error }}</span>
+            </div>
+        </div>
+        <div class="container-fluid mt-4">
+            <div class="container text-center mt-3">
+                <button class="btn btn-outline-light" type="submit">Send</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}
