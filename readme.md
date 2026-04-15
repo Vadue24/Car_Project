@@ -1,3 +1,6 @@
+Here is the project which i developed with my groupmate in 2024.
+Authors: Abdullo Kamoliddinov and Dmitriy Dogonkin
+
 # ECARS.UZ Website
 
 ECARS.UZ is a web application designed to assist users in selecting electric cars and calculating their total cost, including taxes and import fees, when bringing them into Uzbekistan. The platform is intuitive, responsive, and optimized for desktop and mobile devices.
